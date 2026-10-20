@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reza Ghasemi | Machine Learning specialist</title>
+<meta name="description" content="Reza Ghasemi is a machine learning specialist in Edmonton, Alberta. He works on speech, language and signals, including a detector for AI-generated voices.">
+<meta name="theme-color" content="#0a1220">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Link previews (LinkedIn, Slack, etc.). If your address is not reza-csee.github.io, change these two URLs. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reza Ghasemi | Machine Learning specialist">
+<meta property="og:description" content="Speech, language and signals. Creator of a detector for AI-generated voices.">
+<meta property="og:url" content="https://reza-csee.github.io/">
+<meta property="og:image" content="https://reza-csee.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+  @font-face {
+    font-family: "Bricolage Grotesque";
+    src: url("fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+    font-weight: 200 800; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/source-serif-4-latin-wght-normal.woff2") format("woff2");
+    font-weight: 200 900; font-style: normal; font-display: swap;
+  }
+
+  :root {
+    --paper: #f4f6fa;
+    --text: #16202e;
+    --muted: #586579;
+    --line: #d6dce6;
+    --link: #1d4fd7;
+    --focus: #1d4fd7;
+
+    --ink: #0a1220;            /* the hero and contact bands stay dark in both themes */
+    --ink-text: #e8edf5;
+    --ink-muted: #a3b2cc;
+
+    --voice-a: #ff6b6b;        /* the four voices of the hero animation */
+    --voice-b: #ffc44d;
+    --voice-c: #54d69c;
+    --voice-d: #6ea8ff;
+
+    --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0d121c;
+      --text: #e6ebf3;
+      --muted: #9aa7bb;
+      --line: #263044;
+      --link: #8db4ff;
+      --focus: #8db4ff;
+      color-scheme: dark;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { width: min(1080px, 100% - 40px); margin-inline: auto; }
+  a { color: var(--link); text-underline-offset: 0.18em; }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: #fff; color: #0a1220; padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+
+  /* ---------- buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 46px; padding: 0 22px; border-radius: 10px;
+    font: 600 1rem/1 var(--display); text-decoration: none; cursor: pointer;
+    border: 1.5px solid transparent;
+  }
+  .btn-primary { background: var(--voice-b); color: #0a1220; }
+  .btn-ghost { border-color: rgba(232, 237, 245, 0.45); color: var(--ink-text); }
+  .btn-quiet { border-color: var(--line); color: var(--text); }
+
+  /* ---------- hero ---------- */
+  .hero { background: var(--ink); color: var(--ink-text); padding-top: clamp(44px, 8vw, 96px); }
+  .hero a:focus-visible, .contact a:focus-visible { outline-color: #ffffff; }
+  .hero h1 {
+    margin: 0;
+    font: 700 clamp(3.1rem, 9.5vw, 6.4rem)/0.95 var(--display);
+    letter-spacing: -0.035em;
+  }
+  .hero .role { margin: 0.5em 0 0; font: 500 clamp(1.2rem, 2.6vw, 1.6rem)/1.2 var(--display); color: var(--ink-text); }
+  .hero .lede { margin: 1em 0 0; max-width: 50ch; font-size: 1.2rem; color: var(--ink-muted); }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .hero .where { margin: 18px 0 0; font-size: 0.97rem; color: var(--ink-muted); }
+  .waves-box { margin-top: clamp(28px, 5vw, 56px); border-top: 1px solid rgba(163, 178, 204, 0.18); }
+  #waves { display: block; width: 100%; height: 220px; }
+  .wave-cap { margin: 0; padding: 4px 0 16px; font-size: 0.87rem; color: var(--ink-muted); }
+
+  /* ---------- sections ---------- */
+  .section { padding: clamp(46px, 7vw, 88px) 0; }
+  .section + .section { border-top: 1px solid var(--line); }
+  h2 { margin: 0 0 1.1em; font: 650 clamp(1.75rem, 3.3vw, 2.35rem)/1.15 var(--display); letter-spacing: -0.02em; }
+  h3 { font-family: var(--display); }
+
+  /* ---------- timeline ---------- */
+  .job { display: grid; grid-template-columns: 11rem 1fr; gap: 0 clamp(20px, 4vw, 48px); padding-bottom: clamp(36px, 6vw, 64px); }
+  .job:last-child { padding-bottom: 0; }
+  .when { margin: 0; padding-top: 0.35rem; font: 500 1rem/1.4 var(--display); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .what { position: relative; border-left: 2px solid var(--line); padding-left: clamp(22px, 4vw, 42px); }
+  .what::before {
+    content: ""; position: absolute; left: -8px; top: 0.6rem; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--paper); border: 2px solid var(--muted);
+  }
+  .job.now .what::before { background: var(--voice-a); border-color: var(--voice-a); }
+  .what h3 { margin: 0; font-size: clamp(1.25rem, 2.4vw, 1.5rem); font-weight: 650; line-height: 1.25; }
+  .org { margin: 0.2em 0 0.9em; color: var(--muted); }
+  .what ul { margin: 0; padding-left: 1.1em; max-width: 64ch; }
+  .what li { margin: 0.5em 0; }
+  .lead { max-width: 64ch; margin: 0.9em 0 0; }
+
+  .try { margin-top: 1.6em; }
+  .note { max-width: 60ch; margin: 0.9em 0 0; font-size: 0.94rem; color: var(--muted); }
+
+  /* ---------- skills and background ---------- */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px 40px; }
+  .skills h3, .two h3 { margin: 0 0 0.6em; font-size: 1.05rem; font-weight: 650; }
+  .skills ul, .two ul { margin: 0; padding: 0; list-style: none; }
+  .skills li { padding: 0.28em 0; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 40px clamp(28px, 6vw, 80px); }
+  .two li { margin: 0 0 0.8em; max-width: 52ch; }
+
+  /* ---------- contact ---------- */
+  .contact { background: var(--ink); color: var(--ink-text); padding: clamp(52px, 8vw, 96px) 0 28px; }
+  .contact h2 { margin-bottom: 0.5em; }
+  .contact p { max-width: 54ch; margin: 0 0 1em; color: var(--ink-muted); font-size: 1.1rem; }
+  .contact .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 0; }
+  .contact .fine { max-width: none; margin: 56px 0 0; padding-top: 18px; border-top: 1px solid rgba(163, 178, 204, 0.18); font-size: 0.9rem; }
+
+  @media (max-width: 760px) {
+    .job { grid-template-columns: 1fr; }
+    .when { padding: 0 0 0.4rem 24px; }
+    .two { grid-template-columns: 1fr; }
+    #waves { height: 190px; }
+  }
+</style>
+</head>
+
+<body>
+<a class="skip" href="#work">Skip to work</a>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Reza Ghasemi</h1>
+    <p class="role">Machine Learning specialist</p>
+    <p class="lede">I work on speech, language and signals, from LLM-based voice bots to a detector that tells human voices from AI-generated ones.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://rezarastin-ai-voice-detector-rastin.hf.space" target="_blank" rel="noopener">Try the voice detector</a>
+      <a class="btn btn-ghost" href="Reza-Ghasemi-CV.pdf">Download CV</a>
+      <a class="btn btn-ghost" href="mailto:r.ghasemi7171@gmail.com">Email me</a>
+    </div>
+    <p class="where">Edmonton, Alberta. Open to relocating to any province in Canada.</p>
+  </div>
+  <div class="waves-box">
+    <div class="wrap">
+      <canvas id="waves" aria-hidden="true"></canvas>
+      <p class="wave-cap">Four voices travelling through the air, drawn as moving air molecules.</p>
+    </div>
+  </div>
+</header>
+
+<main id="work">
+  <section class="section" aria-labelledby="work-h">
+    <div class="wrap">
+      <h2 id="work-h">Work</h2>
+
+      <article class="job now">
+        <p class="when">Jun 2025 – Present</p>
+        <div class="what">
+          <h3>Independent research: detecting AI-generated voices</h3>
+          <p class="org">Rastin-Voice</p>
+          <p class="lead">Voice cloning now takes seconds, and most voice authentication only checks that a voice matches a stored one, not that it is human. I built a detector that works from the signal itself, so it can flag voices from systems it was never tuned on.</p>
+          <ul>
+            <li>Designed a <strong>signal-level detector</strong> that tells human speech from AI-generated and cloned voices, without training a neural network on known voice generators.</li>
+            <li>Validated on <strong>7 datasets spanning 5 voice-synthesis architecture families</strong>, reaching <strong>AUC 0.94–0.99</strong> on realistic test sets, including <strong>In-the-Wild</strong> and <strong>ASVspoof 5</strong>, on noisy real-world audio.</li>
+            <li>Audited the pipeline for data leakage and fixed several causes of falsely perfect results: shared data pools, silent file-loading failures and sign errors.</li>
+            <li>Built and deployed an interactive demo with <strong>Python, Gradio and Hugging Face Spaces</strong>, with uncompressed 32-bit browser recording, a live spectrogram and a 10-second live verdict.</li>
+          </ul>
+          <p class="try"><a class="btn btn-quiet" href="https://rezarastin-ai-voice-detector-rastin.hf.space" target="_blank" rel="noopener">Try the voice detector</a></p>
+          <p class="note">Research demo, not a certified forensic tool. Your recording is sent to the app for analysis. How the method works is shared under NDA.</p>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="when">Sep 2023 – May 2025</p>
+        <div class="what">
+          <h3>UBERG: environmental deep learning application</h3>
+          <p class="org">Computer Science Lab, Bishop’s University. <a href="https://uberg.ca/" target="_blank" rel="noopener">uberg.ca</a></p>
+          <ul>
+            <li>Developed a buoy-based floating lab for algae monitoring, as part of a research initiative on water ecosystems.</li>
+            <li>Automated algae identification from microscopic images collected in Canadian lakes.</li>
+            <li>Trained and fine-tuned <strong>CNN</strong> models on real datasets, with preprocessing, augmentation and hyperparameter tuning.</li>
+            <li>Reached <strong>over 92% classification accuracy</strong>, enabling reliable detection of multiple algae species.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="when">Sep 2022 – Aug 2023</p>
+        <div class="what">
+          <h3>Voice Bot</h3>
+          <p class="org">Computer Science Lab, Bishop’s University. <a href="https://github.com/Reza-CSEE/VoiceBot" target="_blank" rel="noopener">Code on GitHub</a></p>
+          <ul>
+            <li>Developed an <strong>NLP</strong> and <strong>LLM-based</strong> voice bot in <strong>Python</strong>, using retrieval to improve query understanding.</li>
+            <li>Built serverless <strong>AWS Lambda</strong> pipelines with <strong>RDS</strong>, improving scalability and cutting latency by 40%.</li>
+            <li>Optimized machine-learning workflows for speech and document retrieval, raising accuracy and overall system efficiency.</li>
+            <li>Worked with the team to raise task success by 23% and user satisfaction by 27%.</li>
+            <li>Improved <strong>SQL-based</strong> behavior analysis to find drop-offs, reducing the user exit rate by 19%.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="skills-h">
+    <div class="wrap">
+      <h2 id="skills-h">Skills</h2>
+      <div class="skills">
+        <div>
+          <h3>Machine learning</h3>
+          <ul><li>NLP</li><li>LLMs</li><li>Retrieval</li><li>CNNs</li><li>PyTorch</li><li>TensorFlow</li><li>Scikit-learn</li></ul>
+        </div>
+        <div>
+          <h3>Signals and audio</h3>
+          <ul><li>Signal processing</li><li>Audio ML</li><li>Spoofing detection</li><li>Spectral analysis</li><li>Statistical modeling</li></ul>
+        </div>
+        <div>
+          <h3>Software and data</h3>
+          <ul><li>Python</li><li>C/C++</li><li>SQL and Pandas</li><li>Linux and Git</li><li>AWS Lambda and RDS</li><li>Gradio and Hugging Face</li><li>JavaScript (Web Audio)</li></ul>
+        </div>
+        <div>
+          <h3>How I work</h3>
+          <ul><li>Research</li><li>Collaboration</li><li>Communication</li><li>Problem solving</li><li>Optimization</li><li>Deployment</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="bg-h">
+    <div class="wrap">
+      <h2 id="bg-h">Background</h2>
+      <div class="two">
+        <div>
+          <h3>Achievements</h3>
+          <ul>
+            <li><strong>Best Paper Award</strong>, 21st Electrical Distribution Networks Conference, 2016.</li>
+            <li>Developed a neural network model that predicts regional power outages from real-world data with <strong>98% accuracy</strong>.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Education</h3>
+          <ul>
+            <li>Master’s Degree in Computer Science</li>
+            <li>Bachelor’s Degree in Electrical Engineering (Control)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>I’m open to research collaboration and to roles in audio AI, signal processing and machine learning. The detector’s method is shared under NDA.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:r.ghasemi7171@gmail.com">r.ghasemi7171@gmail.com</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/reza-ghasemi1992/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/Reza-CSEE" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-ghost" href="Reza-Ghasemi-CV.pdf">Download CV</a>
+    </div>
+    <p class="fine">© 2026 Reza Ghasemi. Edmonton, Alberta, Canada.</p>
+  </div>
+</footer>
+
+<script>
+/* Hero animation: four voices (one lane each) travelling through air molecules.
+   Each dot sways with the wave that reaches it; louder moments glow brighter.
+   It pauses when off screen or when the tab is hidden, and shows one still frame
+   if the visitor prefers reduced motion. */
+(() => {
+  const cv = document.getElementById("waves");
+  if (!cv || !cv.getContext) return;
+  const ctx = cv.getContext("2d");
+  const TAU = Math.PI * 2;
+  const COLORS = ["255,107,107", "255,196,77", "84,214,156", "110,168,255"];
+  const F = [0.55, 0.75, 1.0, 1.3];      // waves per second, slowed so the motion is calm
+  const ENV = [0.35, 0.5, 0.28, 0.6];    // how fast each voice swells and fades
+  const PH = [0, 1.3, 2.1, 0.7];
+  const SPEED = 150;                     // wave speed in pixels per second
+  const SWAY = 8;                        // largest sideways movement of a dot, in pixels
+
+  let W = 0, H = 0, dpr = 1, dots = [];
+
+  function layout() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const r = cv.getBoundingClientRect();
+    W = r.width; H = r.height;
+    cv.width = Math.round(W * dpr);
+    cv.height = Math.round(H * dpr);
+    const gap = W < 600 ? 12 : 14;
+    const laneH = H / 4;
+    const rows = Math.max(2, Math.floor(laneH / gap));
+    dots = [];
+    for (let k = 0; k < 4; k++) {
+      const top = k * laneH + (laneH - rows * gap) / 2;
+      for (let row = 0; row < rows; row++) {
+        for (let x = gap / 2; x < W; x += gap) dots.push(x, top + (row + 0.5) * gap);
+      }
+    }
+    dots.perLane = dots.length / 4;      // array entries per lane: two (x, y) per dot
+  }
+
+  function voice(k, tau) {
+    const w = TAU * F[k] * tau;
+    const env = Math.pow(0.5 + 0.5 * Math.sin(TAU * ENV[k] * tau + PH[k]), 1.2);
+    return env * (Math.sin(w + PH[k]) + 0.45 * Math.sin(2 * w + PH[k] * 2)) / 1.45;
+  }
+
+  function draw(t) {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    const per = dots.perLane;
+    for (let k = 0; k < 4; k++) {
+      ctx.fillStyle = "rgb(" + COLORS[k] + ")";
+      for (let i = k * per; i < (k + 1) * per; i += 2) {
+        const x = dots[i], y = dots[i + 1];
+        const s = voice(k, t - x / SPEED);
+        ctx.globalAlpha = 0.24 + 0.76 * Math.min(1, Math.abs(s) * 1.25);
+        ctx.fillRect(x + s * SWAY - 1.4, y - 1.4, 2.8, 2.8);
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  const still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let t = 3, last = 0, visible = true;
+
+  layout();
+  draw(t);
+  window.addEventListener("resize", () => { layout(); draw(t); });
+  if (still) return;
+
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver((entries) => { visible = entries[0].isIntersecting; }).observe(cv);
+  }
+  function loop(now) {
+    requestAnimationFrame(loop);
+    if (!visible || document.hidden || now - last < 33) return;
+    t += Math.min(0.1, (now - last) / 1000);
+    last = now;
+    draw(t);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
